@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: 
+      - main
+  workflow_dispatch:
+  schedule: 
+    - cron: 15 6 * * SUN
+
+jobs:
+  build:
+    name: Some name
+    runs-on: ubuntu-latest
+    steps:
+      - name: event type
+        run: |
+          echo "event ${{ github.event }}"
+          echo "ref ${{ github.ref_name }}"
+          ls -la
