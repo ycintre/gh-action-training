@@ -18,6 +18,7 @@ jobs:
     steps:
       - name: event type
         run: |
-          echo "event ${{ github.event }}"
-          echo "ref ${{ github.ref_name }}"
+          echo "Event --> ${{ github.event.type }}"
+          echo "Ref --> ${{ github.ref_name }}"
+          echo "Files:"
           ls -la
