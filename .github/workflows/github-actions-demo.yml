@@ -13,12 +13,12 @@ on:
 
 jobs:
   build:
-    name: Some name
+    name: Test GH Action
     runs-on: ubuntu-latest
     steps:
-      - name: event type
+      - name: Display info
         run: |
-          echo "Event --> ${{ github.event.type }}"
+          echo "Event --> ${{ github.event_name }}"
           echo "Ref --> ${{ github.ref_name }}"
           echo "Files:"
           ls -la
